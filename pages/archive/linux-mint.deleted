@@ -1,0 +1,16 @@
+((header))
+title:ADD A TITLE!!!
+author:matt
+tags:blog, 
+date:2025-
+((content))
+<h1 id="blogtitle">$$title$$</h1>
+
+>$$date$$
+>
+>Tags: $$tags$$
+
+
+
+
+<div class="round"><a href="https://mattbee.zone/contact?subject=$$title$$" target="_blank">Reply 💌</div></a>

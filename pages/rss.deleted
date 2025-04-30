@@ -1,0 +1,8 @@
+// template for new/empty pages
+((header))
+title:a new page
+author:matt
+tags:
+date:2025-04-24
+((content))
+# Coming Soon
