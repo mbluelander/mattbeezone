@@ -1,0 +1,11 @@
+((header))
+menuitem1:[about]{About}
+menuitem2:<div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
+
+menuitem3:[blog]{Blog}
+menuitem4:[mattbee.zone/contact]{Contact}
+menuitem5:[links]{Links}
+menuitem6:[guestbook]{Guestbook}
+menuitem7:[ko-fi.com/bluelander]{Support}
+menuitem8:[mattbee.zone/rss.xml]{RSS}
+((content))
