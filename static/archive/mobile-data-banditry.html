@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/"><img src="/files/header.png"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
+</span></div><div class="navmenu-item"><span><div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/blog.html">Blog</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/contact">Contact</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/links.html">Links</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/guestbook.html">Guestbook</a>
+</span></div><div class="navmenu-item"><span><a href="https://ko-fi.com/bluelander">Support</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/rss.xml">RSS</a>
+</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1 id="pagetitle">Mobile Data Banditry</h1>
+
+<blockquote>
+  <p>Thursday May 01st, 2025</p>
+  
+  <p>Tags: <a href="hacks">hacks</a>, <a href="internet">internet</a>, <a href="long">long</a>, <a href="phones">phones</a>, <a href="tech">tech</a></p>
+</blockquote>
+
+<p>I have a cheap no-contract phone plan that offers a couple gigabytes of data plus "unlimited talk and text" for $15 a month. Since this is supplementary to my home internet, the couple GB is usually enough, if I'm careful to use mostly text-based applications. Every once in awhile there's a new podcast I want to download and listen to immediately, or I want to look at a site on the adweb, but these occasions are rare and I've gotten pretty good at rationing my data to last all 30 days.</p>
+
+<p>In April, I ran out on day 29. So close! I knew I'd be fine without for a day, I could still text my partner and I could still call someone if there was an emergency. But when this happens, I get curious whether there might be a way to circumvent the data restriction.</p>
+
+<p>You see, my phone is still receiving data. Text is data. I can visit the website for my phone carrier and pay my bill. I can send and receive multimedia messages, that's potentially a <em>lot</em> more data than a text. My phone still says I'm connected to LTE. Clearly there's a normal data connection there and my carrier is just limiting what sources of data I can connect to. But what if I can fool the network into thinking I'm doing approved data activities when I'm not?</p>
+
+<p>I touch on technical concepts about which I have some basic understanding but am not an expert. If you don't care about my kibitzing, here's the</p>
+
+<h3>TL;DR</h3>
+
+<p>I didn't find a way to fool it, but I think MMS has some untapped potential, I discovered a loophole that gives me access to some useful google web functions, and I might have forced my cell phone provider to fix a very cute exploit.</p>
+
+<h3>background: what is a phone?</h3>
+
+<p>I pride myself on having approximate knowledge of many things, but I'll be honest, I don't have a clue how phone networks operate. Modern ones, I mean. When you're talking about old copper-wire POTS<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, I can trace a conceptual line from the telegraph and electrical sound modulation to pulse dialing and switchboards with human operators; then to touch-tone dialing and electronic switchboards controlled by DTMF tones. I may not understand the fine details, but I get the gist.</p>
+
+<p>Now that everything is cell phones and VOIP, I have no clue. It's a black box. I know people have set up their own home PBX/VOIP systems with software like asterisk, but I can't conceptualize how it works. I know it involves "leasing" a phone number, but how? From who? Who owns phone numbers? The government? Do I call up the FCC and say "one phone number, please"? I think it probably involves multiple levels of intermediate wholesalers, and I can't imagine the total expense is anything but prohibitive.</p>
+
+<p>Likewise, I have no idea how cell phones differentiate "stuff that comes through the phone number" and "stuff that comes through the internet". So, my first idea is totally hypothetical and based on shit I don't understand.</p>
+
+<h3>method 0: MMS</h3>
+
+<p>Multimedia Messaging Service (MMS) is an extention of the old Short Message Service (SMS) used for texts. These days, it's most famous for being abused by texting apps that want to cosplay as full-featured chat programs, with reactions and rich media, so if you're in a group text with a bunch of people using iphones, it's this annoying bullshit smeared over dozens of sprawling incoherent messages:</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/G6FpyjK.jpg" alt="conversation screenshot" /></p>
+  
+  <p>The future of communication.</p>
+</blockquote>
+
+<p>But before Apple did what Apple always does to standards, it was a perfectly nice way to send pictures or voice messages to your friends. It seems like the maximum size for an MMS message is 300KB, 600KB, or 1MB, depending on which google result you believe and whether your carrier is using the most recent standard.</p>
+
+<p>So, it seems like it should be fairly simple to send any size file you want in chunks encoded as png images or Base64 text.</p>
+
+<p>The hard part would be automating a system that can send via whatever pipe MMS messages are sent through. I don't have a computer with a phone number, and I don't know how to send anything to a phone number.</p>
+
+<p>But interestingly, the server my carrier uses to relay MMS is http!</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/hSBXyH4.jpg" alt="mobile access settings screenshot" /></p>
+  
+  <p>Luckily, the photo editor on my phone has a weird bug that makes images look gnarly and cybre whenever I use the pen tool. Redaction-core!</p>
+</blockquote>
+
+<p>If the MMS data is sent over http—assuming it's not somehow encrypted (the "wapenc" in the url could be a clue that it's being encrypted or it could just mean encoding, I have no idea)—it should be possible to snoop on the packets, figure out how they're being sent, and reverse-engineer a way to send your own data through that pipe. And this is where my well of technical knowledge has run dry. I have no idea how to do what I described. I just suspect it may be possible.</p>
+
+<h3>method 1: hang on a sec</h3>
+
+<p>But wait... you don't necessarily have to text someone from a phone number. Every (?) cell phone carrier gives you an e-mail address. It's your phone number @ a special domain, like &#53;&#53;&#53;&#56;&#54;&#55;&#53;&#51;&#48;&#57;&#64;&#116;&#120;&#116;&#46;&#99;&#97;&#114;&#114;&#105;&#101;&#114;&#46;&#99;&#111;&#109;. So you'd just need to encode the data chunks, e-mail them, then reassemble. This is a system someone could actually build. Sending large amounts of data this way might cause you to get rate limited or throttled, but ah, that would mean the "unlimited texting" they promised is a filthy lie, wouldn't it? Then they got a lawsuit on their hands 🙃</p>
+
+<p>But hey, with smaller files, encoding shenanigans might not even be necessary. At first, I assumed that MMS systems won't let you attach arbitrary file types, because when I try to include an attachment in a text message, the options presented by the android UI are pretty limited:</p>
+
+<p><img src="https://i.imgur.com/qZONyVP.jpg" alt="attachment modal screenshot" /></p>
+
+<p>But if I'm sending an email, I'm not restricted to what this UI will allow me to attach. <strong>Can I text myself Super Mario Bros.?</strong></p>
+
+<p><img src="https://i.imgur.com/b1wQMxF.jpg" alt="An MMS message that reads &quot;additional media content is included. Please check the message in detail." /></p>
+
+<p>Hm, okay, "Please check the message in detail." I can probably do that by... uh... "long-pressing" on it?</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/NWCOKuh.jpg" alt="screenshot of message details. It shows a size of 41 kilobytes." /></p>
+  
+  <p>This time I cropped out the part of the UI with alpha transparency and it didn't fuck it up at all. What's the deal, phone?</p>
+</blockquote>
+
+<p>Okay, 41KB. Mario is in there somewhere, in some form. How do I get him out? Mario's not equipped to survive in computer world. He doesn't have a frisbee made of light or anything.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+
+<p>At first I assumed it's impossible and the system isn't built for these kinds of attachments, so I went through a whole bunch of rigamarole trying to send it with a .txt extension, copy the text, and turn it back into a .nes file on the other end, which didn't work (it just strips the part where all the binary data's hidden.) Then I tried to encode the rom into Base64 and decode it, which also didn't work. I spent a lot of time trying to figure out what I was doing wrong (I think it has something to do with incompatible line ending format between the two programs I was using) which is part of what made it take so long for me to finish writing this.</p>
+
+<p>But I had an epiphany, and none of that was necessary. Turns out all I needed to do was long-press on the message and choose the worst-named function in UI history:</p>
+
+<pre><code>"share" 🙄
+</code></pre>
+
+<p>It gave me a list of different apps I could share it with. One of the options was the file manager. When I "shared" the message with it, I got to choose a location where I wanted to save it:</p>
+
+<p><img src="https://i.imgur.com/o81EeQd.jpg" alt="screenshot of message: smb001.nes copied to android storage" /></p>
+
+<p>And there you have it. It always appends 001 to the filename for some reason, but otherwise it's the same file. I texted myself an NES rom via e-mail and it works in <a href="https://f-droid.org/packages/com.androidemu.nes/">Nesoid</a>. No metered data required.</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/jzUYUTC.jpg" alt="screenshot of super mario bros being played on a horizontal phone with virtual buttons" /></p>
+  
+  <p>Finally, Mario the way it's meant to be played: while smooshing your thumbs against indiscernible spots on an unyielding glass screen.</p>
+</blockquote>
+
+<p>So now that I know it works, it's time to test the limits.</p>
+
+<p>First off, I don't know whether this is obvious, but you do need an active data connection to get the attachments. I tried turning mobile data off, and messages will come through, but it's just the SMS text notifying you that you received something; none of the data in the MMS layer is accessible over the edge network. Once I turned LTE back on, it came in properly.</p>
+
+<p>I know it works on a data connection that's been suspended for going over the cap, but it wouldn't work if I were suspended for nonpayment; even though there is an active LTE connection, I wouldn't be able to get calls or texts.</p>
+
+<ul>
+<li><p>I tried it with the Dragon Warrior 3 rom, which is 512KB, and that went through fine.</p></li>
+<li><p>I wanted to see if it would allow me to send an APK, so I found one small enough, a tiny storage analysis utility called <a href="https://m.apkpure.com/diskusage/com.google.android.diskusage">DiskUsage</a>. It sent and installed with no issues.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> <strong>⚠️ This should go without saying, but do not install random apk files from the web, or open any executable file from an unknown source. Doing so may may put your phone at risk. ⚠️</strong></p></li>
+<li><p>I wanted to send a different file type between 600KB and 1MB, so I looked through my downloads and found a 700KB .mobi copy of Frank Herbert's <em>Children of Dune</em>. It also went through no problem.</p></li>
+<li><p>I sent a .7z archive of a GBA rom slightly more than 1MB, expecting it to fail, but it went through. Might the limit not be 1MB after all? <em>Hm...</em></p></li>
+<li><p>A 5MB PDF? No probalo 👌</p></li>
+<li><p>A 16MB game boy advance rom? Well, now it gets complicated.</p></li>
+</ul>
+
+<p>I assume  it failed, and thus the file size limit is somewhere between 5 and 16MB, but I can't be sure, because it didn't bounce back on the e-mail end or give me some sort of undeliverable message warning on the phone end. It just silently failed. Or, maybe it hasn't failed yet.</p>
+
+<p>This is where we get to the big caveat for this method: not only is it very slow, it's slow in an unpredictable way. A 5MB file might go through almost immediately, or a 50k file might take 10 minutes. The GBA rom might show up eventually, but at this point it's been half an hour, which is longer than any other file has taken, so I'm assuming the network unceremoniously discarded it. If this changes, I'll add an erratum here.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+
+<p>Still, if it's not urgent, this is a way to get a non-trivial amount of data without counting against your cap. I can definitely see a scenario where it's practical to have a system where you send an SMS containing the URL for a file to an e-mail inbox on a server you control, a script fetches the file, and the system replies with the file attached. With a very low monthly cap, it's prudent to preserve every precious megabyte possible.</p>
+
+<h3>method 2: elite hacking skills</h3>
+
+<p>I have access to my carrier's website. What if I use the browser developer tools and drop an &#60;&#105;&#102;&#114;&#97;&#109;&#101;&#62; on the page that loads the website I want?</p>
+
+<p>Well, chromium-based browsers on Android (the one I use is Kiwi Browser) do have developer tools, just like Chrome on PC, but it's barely functional on a phone. When you try to edit a page element, the keyboard pushes the UI up to completely obscure what you're typing, so I had to type the tag in a text editor, carefully position my cursor, and use the paste button on the keyboard.</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/eERManS.jpg" alt="android chromium dev tools screenshot" /></p>
+  
+  <p>The ultimate development environment. A real hacker can <strong>sense</strong> the code.</p>
+</blockquote>
+
+<p>I wanted the iframe to contain this website, so I pasted this just after the body tag:</p>
+
+<pre><code>&lt;iframe src="http://bluelander.bearblog.dev"&gt;
+</code></pre>
+
+<p>Having the carrier website open in one tab and the developer tools open in another tab uses about 900% of my available ram, and doing anything at all with the dev tools slowed everything to a crawl, but eventually I managed to paste the tag and switch back to the site tab without the browser crashing. There was a big white box superimposed over the site that may have been an iframe failing to load the requested content, or may have just been general jank. I could no longer scroll or interact with the site in any way. I realize now that I should have used the TLS version of the URL, since it probably won't want to load an http iframe on an https site even under the best conditions, but if by some miracle the https version worked, this still clearly wouldn't be functional enough to rely on.</p>
+
+<h3>method 3: the samsung/telecom goodwidget pact</h3>
+
+<p>I have a samsung phone, so it comes with its own terrible built-in browser that I never use and can't uninstall. However, when I was experimenting, I discovered something shocking: even when data is restricted, google search is 100% functional in the samsung browser. Additionally, it's faster than any other website I use over LTE, ever.</p>
+
+<p>I have an unlocked xcover 4 that originates from outside the US and a BYOP plan, so I assume samsung has worked out a deal with all the carriers to prioritize google search traffic, so people using samsung phones won't complain that the search widget sucks.</p>
+
+<p>When I discovered this, I immediately set out to discover what limitations are placed on it. What I'm allowed to do is very granular: I can do a google search or a google image search. All of the instant search results still work, so I can find the weather for my area, or convert cups to millilitres, or calculate the square root of 7, or see the tallest punk singers in descending order of height.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+
+<p>As soon as I tap on one of the results, the connection fails, even if it's an AMP page.</p>
+
+<p>I can't go to most google subdomains directly, but some of them sort of work if I do a google search and then click on the link from the google search results. For example, nothing happens if I type books.google.com into the URL bar, but if I search for "google books" and click the link in the result, I have pretty much full access. I thought this would be a way to get to public-domain books, but gbooks itself doesn't seem to host any full texts, even ones it has the rights to. If I search for "Frankenstein", I can't find, like, a text version from Project Gutenberg. It's just various commercial publications, at best all I can get is a preview. You <em>can</em> find noncommercial versions, but they all link to a $0 purchase in the google play store, which I would argue is slightly less free than actually free.</p>
+
+<p>I was able to get to google translate, which was exciting because there was a chance I could use the old anti-firewall trick: you can use google translate as a proxy to view whatever webpage you want, just "translate" a page that's already in english from another language into english. But no dice. Google Translate loaded, it looked like it was going to work, but when I clicked the link to view the translated page, just an infinite throbber.</p>
+
+<p>While I was at it, I also took a stab at seeing if the <a href="https://webcache.googleusercontent.com/search?q=cache:https://bluelander.bearblog.dev/">google web cache</a> would work, but nope, no connection.</p>
+
+<p>Some subdomains are accessible, but less functional. If I search for "google drive", the link takes me to a splash page inviting me to log in, even if I'm already logged in. Clicking the link fails to do anything. Weirdly, youtube works, even when I type youtube.com into the address bar, but it has no video thumbnails and (naturally) I can't watch videos there. I guess this is so you can get fast results when you do a video search with the widget. And some subdomains like gmail and google news don't work at all.</p>
+
+<p>I tried every google product I could think of that might be a backdoor to useful data—docs, sites, chat, voice, hangouts, blogger, podcasts, even weird shit like <a href="https://artsandculture.google.com/">google arts and culture</a>—and if I could access any of them at all, I was stymied as soon as I tried to do anything useful with them. They locked everything down as tightly as possible. That said, I consider this a small victory, because there <em>are</em> useful things I can do with my phone when I'm out of data. If I ever desperately need to prove who won the 1942 World Series to win a bar bet, there's nothing my telecom can do to stop me!</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/PXBVTVN.jpg" alt="very glitchy screenshot of google search results with a purple line on it" /></p>
+  
+  <p>Oh no, I brought back the wrong sports almanac, this is the <strong>blaseball</strong> result!</p>
+</blockquote>
+
+<h3>method 4: sneak in through the help docs</h3>
+
+<p>This one's my favorite. Not only did it almost work, but it reminds me of a classic windows exploit only 90s kids will remember.</p>
+
+<p>So, I'm back to Kiwi Browser. I load up my carrier's homepage. I'll be using this site to demonstrate the steps.</p>
+
+<p>Tap the little lock icon in the URL bar, and tap where it says "Connection is secure".</p>
+
+<p><img src="https://i.imgur.com/YZMu6MF.png" alt="Screenshot" /></p>
+
+<p><img src="https://i.imgur.com/MTOctZy.png" alt="screenshot" /></p>
+
+<p>It'll show you some info about the page's encryption status.</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/aiUdHXn.png" alt="UI screenshot" /></p>
+  
+  <p>I didn't want the joke to wear thin, so I begrudgingly downloaded <a href="https://f-droid.org/en/packages/org.catrobat.paintroid/">a different image editor</a>. Don't worry, the glitchy isn't going anywhere.</p>
+</blockquote>
+
+<p>At the bottom, tap "what do these mean?" and it'll take you to the google support page about TLS certificates.</p>
+
+<p><img src="https://i.imgur.com/ERCiaX0.png" alt="web screenshot" /></p>
+
+<p>Normally there's not many places you can go from here, but I'm logged in, and it's inviting me to take a look at my account settings.</p>
+
+<p>From there, I can tap the waffle menu at the top and get access to a bunch of google services.</p>
+
+<p><img src="https://i.imgur.com/6MPRSZ4.jpg" alt="web screenshot" /></p>
+
+<p>Now, this modal didn't work when I was using google in the samsung browser: it gave me a throbber that spun for a minute but eventually errored out.</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/zsNII6w.jpg" alt="web screenshot" /></p>
+  
+  <p>It would give me a similar error if I tried to tap my account picture.</p>
+</blockquote>
+
+<p>But here, it came up right away. So I tap News, and it takes me to google news. I wasn't able to get there with the samsung trick! Excited, I tap the waffle menu again and tap "drive". It takes me straight to my google drive account. I can see all my files.</p>
+
+<p>But something's amiss. I can see the file names, but there are no thumbnails, and the javascript or CSS didn't load properly, because the page looks broken (I was too excited to think to screenshot this, a shame I will never live down) but I tapped one of my files, and... nothing. A throbber that throbbed forever. I force-closed kiwi browser, opened it again, tried to get back to the google help doc, and this time nothing happened. They caught me. I don't know how they noticed it so quickly, maybe it's because I was already fucking around to see what I could get away with, but that door is now closed. Still though, what a thrill. For just a moment, I could say... <strong>I'm in 😎⚡🖥️</strong></p>
+
+<p>If you're not familiar with it, the Windows 98 trick involves using a byzantine series of help menus to bypass the login screen, as immortalized in <a href="https://i.imgur.com/fqjnK.gif">this gif</a>.</p>
+
+<h3>conclusions</h3>
+
+<p>Method #4 ended up inconclusive, but it was exciting to find a back door, even if they did immediately slam it shut.</p>
+
+<p>Method #3 is interesting, but probably not an actual exploit, and I don't know how universal it is, i.e. whether it's all samsung phones or just my specific model, or even if it would still work if my OS was up to date. Still, it's an actually useful feature I didn't know I had before.</p>
+
+<p>Method #2 was a silly idea I didn't expect to work, but it was fun to discover new depths of just how bad an interface can be.</p>
+
+<p>MMS is definitely the most promising option. I never guessed it would allow you to receive any type of file, as long as you know how to operate the arcane UI. The 5MB limit makes it tricky, but I remember in the days of shaky dial-up and only-barely-less-awful DSL, it wasn't uncommon to find large files distributed as dozens of chunks you stitch together with a program like hjsplit. Desperate times call for creative solutions.</p>
+
+<p>I think we could be getting more milage out of MMS as a text delivery platform, too. If I had the technical chops, I think the first thing I would make is a relay to accept text messages, turn them into a wikipedia search query, and reply with a text-only version of the requested article. This should work even on the cheapest pre-paid normalphones that aren't useful multimedia devices, and I know wikipedia has its limitations, but having a cheap device with a cheap connection that lets you instantly find information about anything, well, it reminds me of something</p>
+
+<blockquote>
+  <p><img src="https://imgs.xkcd.com/comics/kindle.png" alt="xkcd comic" /></p>
+  
+  <p><a href="https://imgs.xkcd.com/comics/kindle.png">[view big]</a> <a href="https://www.explainxkcd.com/wiki/index.php/548:_Kindle#Transcript">[transcript]</a></p>
+</blockquote>
+
+<p>So uh, if you read this far, thanks! Hope you had a good time. The moral of the story is: fuck around and find out, because fucking around is fun, and learning is cool 🦝</p>
+
+<p><button onClick=likebutton()  class='sharebutton'>Like &#128077;</button> <input id='sharebutton' type='text' value=' ' id='myInput' style='display:none;'><button onClick='myFunction()' class='sharebutton'>Share &#x1F4E3;</button> <button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button></p>
+
+<div class='replyhidden' id='replyform'><blockquote>If you mentioned this post on your own site and would like to notify me, please enter the URL here:<br>
+<form action='/contact-php/mail.php' method='POST'><input type='text' name='name' id='name' style='width:30em'; required><input type='hidden' name='subject' value='Mobile Data Banditry'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' style='display:none;'> <input type='submit' value='Send'></form><br>Otherwise, click <a href='https://mattbee.zone/contact?subject=Mobile Data Banditry'>here</a> to send a message.</blockquote></div>
+
+<div class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+
+<li id="fn:1" role="doc-endnote">
+<p>Plain ol' telephone service.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:5" role="doc-endnote">
+<p>But maybe he should. Nintendo: call me 🤙&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:3" role="doc-endnote">
+<p>Sidenote: not only did it install just fine, it's also a surprisingly useful app. It's essentially an Android version of <a href="https://archive.org/details/spcmn140_zip">SpaceMonger</a>, the free 1.40 release of which has been my go-to storage analysis program on Windows for years.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:4" role="doc-endnote">
+<p>Today protonmail sent me an error notice that says "Your message could not be delivered for more than 12 hour(s). It will be retried until it is 2 day(s) old." Which is kind of a weird failure mode. Also, since writing this, I've tried different attachment sizes to see if I can pinpoint the exact limit, and nothing larger than 5MB has sent, so looks like I got it in 1.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:2" role="doc-endnote">
+<p>Joey Ramone was 6'6"? Holy shit.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+</ol>
+</div>
+</div><span class="edit_button"><a href="https://mattbee.zone/archive/mobile-data-banditry.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-NC-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
+</div></div></body></html>

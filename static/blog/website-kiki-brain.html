@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/"><img src="/files/header.png"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
+</span></div><div class="navmenu-item"><span><div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/blog.html">Blog</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/contact">Contact</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/links.html">Links</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/guestbook.html">Guestbook</a>
+</span></div><div class="navmenu-item"><span><a href="https://ko-fi.com/bluelander">Support</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/rss.xml">RSS</a>
+</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1 id="pagetitle">Website, Kiki, Brain</h1>
+
+<blockquote>
+  <p>Tuesday April 29th, 2025</p>
+  
+  <p>Tags: <a href="blog">blog</a>, <a href="kiki">kiki</a>, <a href="mental health">mental health</a>, <a href="meta">meta</a>, <a href="programming">programming</a></p>
+</blockquote>
+
+<p>Most of my creative energy for the past few days has gone into  <a href="https://mattbee.zone">my website</a>. I'm really happy with how it's coming along. My goal was a design that combined the simplicity of my bearblog with the colorful personalization of my old neocities site, and I think I nailed it. I solved the navigation problem by putting all the major site categories in a well-designed and accessible drop-down menu in the navigation bar. I've always wanted a site with a drop-down menu, but always balked because doing it with pure CSS or a details/summary hack never looked or behaved quite the way I wanted. Like I'm sure it's possible if I beat my head against it long enough, but instead, I just used javascript. Every big website is three javascript frameworks in a trenchcoat, so I can have a little script or two. It looks great.</p>
+
+<p>I think I'm pretty happy with the design and structure of my site, most of the changes I want to make now will involve hacking the PHP to streamline and automate some processes. I'm not going to rush it, because I need to take a break from programming for awhile. I love it, but I tend to get "lost in the sauce" a little bit. It's like the good version of what I experienced during my <a href="/blog/linux-hate">Linux ordeal</a>. Instead of addiction fueled by frustration, it's fueled by the joy of creation. It's good, but hacking the PHP will be much more challenging than anything I've done with kiki this far and I need to slow my brain down.</p>
+
+<h2>Kiki</h2>
+
+<p>Speaking of kiki, I'm still very happy with it. There are some functions from other wiki/blog solutions I wish it had, but it's still been a joy to work with. I can't believe how long my workflow for having a website was "writing HTML in the Neocities editor". I don't like writing HTML under the best circumstances, and I love neocities philosophically, but their file management/editing UI is straight-up dog trash. Maybe it's just the devil I know, but markdown works for my brain. Making a new page on neocities involved: deciding what template I want to use, copying and pasting the template, making sure to change all the fiddly bits (there are still pages on the old portfolio site with the wrong title attribute because I just couldn't make myself care,) writing the page, checking the formatting, fixing the formatting, checking the page again, checking the links, fixing the links, and hopefully adding a link to the main page (checking it 2 or 3 more times to make sure everything works properly, usually fixing at least one more thing after it's live...)</p>
+
+<p>With kiki, the process is: create a link to the new page. Click the link. Fill out metadata. Write markdown. Save. Done. I'm still not perfect, but I make way fewer mistakes because markdown <em>stays out of my way</em>. It feels like <em><strong>writing++</strong></em>, not <code>writing subsystem for hypertext</code>.</p>
+
+<p>Anyway, I've copied most of my stuff from the old site and linked to most of my stuff on third-party sites. There's still probably a lot of blog posts I want to copy over to <a href="https://mattbee.zone/archive">the archive</a>, but so far I've just got a few recent ones and a few old ones that stick out in my memory. If you've been a reader on bearblog and you think any particular entries are worth highlighting, please <a href="https://mattbee.zone/contact?subject=Entries worth highlighting">let me know</a>.</p>
+
+<p>In other website news, I'm thinking of ditching the guestbook, at least for now. I checked my dashboard to see if all the recent activity has impacted my hosting fees at all, and no, not really; but I noticed that the cost of a SQL database is almost as much as the rest of my website combined. Which is still barely anything, but like, the guestbook is kind of broken anyway. It doesn't escape characters properly, which wouldn't be a big deal, except that it breaks if someone uses an apostrophe,<sup id="fnref:apos"><a href="#fn:apos" class="footnote-ref" role="doc-noteref">1</a></sup> which is a <em>pretty important</em> character. Like if you're going to write English with a limited character set, you can get by with just periods, commas and apostrophes. Losing any of those 3 is kind of a dealbreaker. I can fix it by editing the database, but I don't relish the idea of it looking like trash until I notice it and am at home where I can fix it.</p>
+
+<p>I could debug it, but I'd rather spend my energy on a guestbook module I can cleanly incorporate into kiki, preferably using flat files instead of a database.</p>
+
+<p>I mean... I guess the simplest option would be to just use my <a href="https://mattbee.zone/contact">existing contact form</a>, and if you put "guestbook" in the subject line then I'll add your message to a guestbook. I'll just make a "guestbook" tag and give each entry its own page. Boom, problem solved. People might not want to use it if the message doesn't appear instantaneously, but then they can just not use it. There are plenty of places on the internet for instantaneity, my personal website doesn't have to be one of them. It's cool.</p>
+
+<p>Also, I realized my captcha approach was totally unnecessary. I changed it to a "negative captcha". The idea is, bots that spam forms on websites will put something in each input field. They're not designed to leave anything blank. So I have a captcha field on the form that's invisible to humans but visible to bots. If that field contains <em>anything</em> when the form is submitted, it's identified as a bot submission and rejected. I read about this technique years ago, and apparently it works, I don't know why I didn't think to do that before now. I guess "bots fill out every field" feels slightly more superstitious to me than "bots can't identify emoji". Like, <em>is</em> it true? I feel like I've seen spam comments on blogger where the bot didn't bother to fill out the URL field. Which seems counter-intuitive to the purpose of spam, but nothing about spam makes sense to me. Anyway, I guess I'll see if I get any spam and report back. If it doesn't, I might try giving the bot traps ID attributes like "message" and "email" and see if it's more inclined to fill them out. The <em>actual</em> message and email fields could have gibberish IDs, they only matter to me and the computer.</p>
+
+<h2>Brain</h2>
+
+<p>So, I just did all the work I talked about for the guestbook. At work, on my phone, even though it would've been way easier if I waited til I got home. This is the problem with my brain problems: if I have an idea, I need to act on it <em>immediately</em>, because I have the motivation now, I may not have the motivation later. A lifetime of ADHD executive dysfunction has trained me to strike while the iron is hot, do the thing <em>now</em> because when I get home, it may be too late. Even though my ADHD is treated, and I'm a <em>lot</em> more likely to be able to follow up on an idea, old habits die hard.</p>
+
+<p>Even as I was writing this, I thought "Now that I integrated the guestbook page into kiki, I <em>know</em> I can do the same with the contact form." Previously both functions were in their own separate sandbox, and I crudely copied the HTML generated from one of my pages to make it <em>appear</em> to be smoothly integrated. But there were seams. I knew I could do it right.</p>
+
+<p>The only PHP function in the form is one that parses the URL for a <code>?subject=</code> query and auto-fills the subject field if there's anything in there. Following the instructions in the <a href="https://tomodashi.com/help/user_guide">user guide</a>, I added a new variable to the <code>load_page()</code> function to allow me to do this from within kiki:</p>
+
+<pre><code>if ($page_source)
+{
+... snip ...
+if (isset($_GET["subject"]))
+    {
+        $dynamic_content["subject"] = $_GET["subject"];
+    } else {
+    $dynamic_content["subject"] = "";
+    }   
+... snip ...    
+}
+</code></pre>
+
+<p>Now in my contact form all I have to do is add <code>value="$subject$"</code><sup id="fnref:dollar"><a href="#fn:dollar" class="footnote-ref" role="doc-noteref">2</a></sup> to the subject field, and it works! It's seamless!</p>
+
+<p>This is something I was never able to do with oddmuse. I had to use the "copy the HTML" method and keep the contact form sandboxed, because the contact form was PHP and oddmuse was perl.</p>
+
+<p>It's a very small thing, but this is the first time I've actually changed the kiki code for a dynamic function, and not just adding a <code>&lt;title&gt;</code> attribute or header image. Getting it to work feels incredible, I'm unstoppable. I already know what my next hack will be: custom emoji! It should be dead simple to add a $$headpat$$ variable that will drop in this critter:</p>
+
+<p><img src="https://i.imgur.com/wmJKGWr.png" alt="" title="" /></p>
+
+<p>See, this is what my brain does. I shouldn't be doing any of this. Remember what I said the other day about debugging PHP on your phone? And how you should not? I can't take my own advice. I said I needed to take a break from programming and slow down and then I did this in the same afternoon. My brain makes me do things I shouldn't. I wish it didn't have a mind of its own <span class='emoji' style='background: no-repeat center url(/emoji/headpat.png); background-position:bottom; background-size: 20px 20px;'> </span></p>
+
+<p><button onClick=likebutton()  class='sharebutton'>Like &#128077;</button> <input id='sharebutton' type='text' value=' ' id='myInput' style='display:none;'><button onClick='myFunction()' class='sharebutton'>Share &#x1F4E3;</button> <button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button></p>
+
+<div class='replyhidden' id='replyform'><blockquote>If you mentioned this post on your own site and would like to notify me, please enter the URL here:<br>
+<form action='/contact-php/mail.php' method='POST'><input type='text' name='name' id='name' style='width:30em'; required><input type='hidden' name='subject' value='Website, Kiki, Brain'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' style='display:none;'> <input type='submit' value='Send'></form><br>Otherwise, click <a href='https://mattbee.zone/contact?subject=Website, Kiki, Brain'>here</a> to send a message.</blockquote></div>
+
+<div class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+
+<li id="fn:apos" role="doc-endnote">
+<p>Yes, technically it's a "single quotation mark", but you know what I mean. It's the key on the keyboard that everyone uses as an apostrophe.&#160;<a href="#fnref:apos" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:dollar" role="doc-endnote">
+<p>But with two dollar signs on each side instead of one. Even in <code>&lt;pre&gt;</code> tags and using HTML shortcodes, dynamic variables still get parsed!&#160;<a href="#fnref:dollar" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+</ol>
+</div>
+</div><span class="edit_button"><a href="https://mattbee.zone/blog/website-kiki-brain.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-NC-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
+</div></div></body></html>

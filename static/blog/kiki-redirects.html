@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/"><img src="/files/header.png"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
+</span></div><div class="navmenu-item"><span><div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/blog.html">Blog</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/contact">Contact</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/links.html">Links</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/guestbook.html">Guestbook</a>
+</span></div><div class="navmenu-item"><span><a href="https://ko-fi.com/bluelander">Support</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/rss.xml">RSS</a>
+</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1 id="pagetitle">Kiki URL Rewrites With Managed Hosting</h1>
+
+<blockquote>
+  <p>Saturday April 26th, 2025</p>
+  
+  <p>Tags: <a href="blog">blog</a>, <a href="kiki">kiki</a>, <a href="meta">meta</a>, <a href="tech">tech</a></p>
+</blockquote>
+
+<p>Just a quick note about URL redirects with kiki: the <a href="https://tomodashi.com/kikidemo/help/user_guide">user guide</a> gives some steps for enabling URL rewriting (under the heading "SEO-Friendly Permalinks") for use with the "easy" style of permalinks. For example, instead of <code>example.com/index.php?page=blog</code>, it's much cleaner to simply have <code>example.com/blog</code>.) I figure most people using kiki would prefer this setup, if possible.</p>
+
+<p>The steps in the documentation assume you're running your own apache server<sup id="fnref:nginx"><a href="#fn:nginx" class="footnote-ref" role="doc-noteref">1</a></sup> and have access to the configuration, but with a managed hosting provider (such as <a href="https://nearlyfreespeech.net">mine</a>) the process is different. It took some figuring out, but here's what worked for me:</p>
+
+<p>Create a file in your root folder called <code>.htaccess</code>. It should be a text file with only the following lines:</p>
+
+<pre><code>RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?page=$1 [L,QSA]
+</code></pre>
+
+<p>Here's what each line does:</p>
+
+<p><strong>RewriteEngine on</strong> enables the URL rewriting feature.</p>
+
+<p><strong>RewriteCond %{REQUEST_FILENAME} !-d</strong> says this rule only applies to anything that isn't an existing folder name.</p>
+
+<p><strong>RewriteCond %{REQUEST_FILENAME} !-f</strong> says this rule only applies to anything that isn't an existing file name.</p>
+
+<p><strong>RewriteRule ^(.*)$ index.php?page=$1 [L,QSA]</strong> is what does the rewriting. <code>^(.*)$</code> is what's know 
+as a "wildcard expression".<sup id="fnref:regex"><a href="#fn:regex" class="footnote-ref" role="doc-noteref">2</a></sup> It ensures that the rule applies to whatever the visitor types after the <code>.com/</code>.<sup id="fnref:zone"><a href="#fn:zone" class="footnote-ref" role="doc-noteref">3</a></sup> the $1 is a reference tag. It refers to whatever appears in the first (in this case only) set of parentheses. So if a visitor types <code>example.com/whatever</code>, as long as "whatever" isn't an existing file or folder name, that it'll display as if the person instead visited <code>example.com/index.php?page=whatever</code>. Importantly, this doesn't <em>forward</em> the visitor, it actually changes the URL. That's the difference between a rewrite and a redirect; I confused the terminology in a previous draft, sorry about that.</p>
+
+<p><strong>[L,QSA]</strong> is part of the Apache rule. <code>L</code> means "last", i.e. "stop after you process this rule." <code>QSA</code> is a flag that allows the rule to work with queries, i.e. anything after the <code>?</code> in the URL.<em><sup id="fnref:rewrite"><a href="#fn:rewrite" class="footnote-ref" role="doc-noteref">4</a></sup></em></p>
+
+<p>Big thanks to <a href="https://gist.github.com/RaVbaker/2254618">RaVBaker</a> for helping me piece this together, particularly his <a href="https://gist.github.com/RaVbaker/2254618#extended-example">extended example</a>. This stuff is tricky and most of the tutorials out there do not explain things well.</p>
+
+<p>The solution may be different for you depending on your hosting provider, but hopefully this will point you in the right direction.</p>
+
+<p><button onClick=likebutton()  class='sharebutton'>Like &#128077;</button> <input id='sharebutton' type='text' value=' ' id='myInput' style='display:none;'><button onClick='myFunction()' class='sharebutton'>Share &#x1F4E3;</button> <button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button></p>
+
+<div class='replyhidden' id='replyform'><blockquote>If you mentioned this post on your own site and would like to notify me, please enter the URL here:<br>
+<form action='/contact-php/mail.php' method='POST'><input type='text' name='name' id='name' style='width:30em'; required><input type='hidden' name='subject' value='Kiki URL Rewrites With Managed Hosting'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' style='display:none;'> <input type='submit' value='Send'></form><br>Otherwise, click <a href='https://mattbee.zone/contact?subject=Kiki URL Rewrites With Managed Hosting'>here</a> to send a message.</blockquote></div>
+
+<div class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+
+<li id="fn:nginx" role="doc-endnote">
+<p>I unfortunately don't have any information about nginx.&#160;<a href="#fnref:nginx" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:regex" role="doc-endnote">
+<p>To get even more into the weeds: the <code>^</code> means "the beginning of the line". The <code>$</code> means "the end of the line". The <code>.</code> means "any letter, number or symbol". The <code>*</code> means "I'll keep looking for the previous thing until you tell me to stop". Putting the wildcard in parentheses like <code>(.*)</code> means you can refer to whatever is between them later in the expression with <code>$1</code>. Regular expressions are <a href="https://xkcd.com/208/">very powerful</a>, but they can make your head spin a bit.&#160;<a href="#fnref:regex" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:zone" role="doc-endnote">
+<p>Or in my case of course, <code>.zone/</code>&#160;<a href="#fnref:zone" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:rewrite" role="doc-endnote">
+<p>See <a href="https://httpd.apache.org/docs/current/rewrite/flags.html">RewriteRule Flags</a> at Apache.org.&#160;<a href="#fnref:rewrite" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+</ol>
+</div>
+</div><span class="edit_button"><a href="https://mattbee.zone/blog/kiki-redirects.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-NC-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
+</div></div></body></html>

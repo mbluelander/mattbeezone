@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/"><img src="/files/header.png"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
+</span></div><div class="navmenu-item"><span><div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/blog.html">Blog</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/contact">Contact</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/links.html">Links</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/guestbook.html">Guestbook</a>
+</span></div><div class="navmenu-item"><span><a href="https://ko-fi.com/bluelander">Support</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/rss.xml">RSS</a>
+</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1>whirltube</h1>
+
+<p>Simple bash interface for interacting with <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>. Also requires <a href="https://github.com/FFmpeg/FFmpeg">ffmpeg</a> and optionally <a href="https://github.com/videolan/vlc">vlc</a> to enable streaming.</p>
+
+<p><img src="https://imgur.com/f2z4ILu.png" alt="screenshot" /></p>
+
+<h3>Use</h3>
+
+<p>Download wt.sh from <a href="https://github.com/mbluelander/whirltube/">github</a> or with</p>
+
+<pre><code>wget https://mattbee.zone/files/wt.sh
+</code></pre>
+
+<p>If you would like to be able to run the program from anywhere, place wt.sh in one of your system's "PATH" folders. For a list of folders in your system's PATH, open a command line and type &#101;&#99;&#104;&#111;&#32;&#36;&#80;&#65;&#84;&#72;.</p>
+
+<blockquote>
+  <p>⚠️ NOTE
+  wt.sh must be in the same folder as yt-dlp, or yt-dlp must be in your system's &#36;&#80;&#65;&#84;&#72; to use whirltube.</p>
+</blockquote>
+
+<p>Make the program executable with &#99;&#104;&#109;&#111;&#100;&#32;&#43;&#120;&#32;&#119;&#116;&#46;&#115;&#104;. If you placed wt.sh in a path folder, simply open a terminal and type wt.sh. Your downloaded media will be stored in whatever folder you're currently in. Otherwise, navigate to the folder containing wt.sh and type &#46;&#47;&#119;&#116;&#46;&#115;&#104;. Choose your option, and paste the youtube (or other supported media) URL with &#99;&#116;&#114;&#108;&#43;&#115;&#104;&#105;&#102;&#116;&#43;&#118; (may vary depending on your terminal emulator) and press enter.</p>
+
+<p>Option 4 toggles downloading of subtitles. To set this option to always on, change the default settings.</p>
+
+<p>Option 5 toggles the importing of browser cookies for obtaining login-gated content. This will default to firefox, which can be changed in the default settings (see below.)</p>
+
+<p>Options 6 and 7 will cycle through some basic options for video resolution and audio format. This can be overridden by changing the default settings.</p>
+
+<pre><code>wt.sh [url]
+</code></pre>
+
+<p>Will skip the menu and immediately download the media at [url] with the default settings.</p>
+
+<h3>Default settings</h3>
+
+<p>Open wt.sh in a text editor to change.</p>
+
+<pre><code class="bash">sub=0       # 1 = download subtitles of specified language
+lang="en-en"    # Subtitle language(s)
+res=720     # Default resolution. 480, 720, 1080, etc.
+form="Mp3"  # Format for audio extraction. Mp3, Opus, M4a, etc.
+cookies=0   # 1 = import browser cookies for login-gated content
+bsr="firefox"   # Browser from which to allow cookies   
+</code></pre>
+
+<h3>Changes</h3>
+
+<ul>
+<li><strong>1.1.3</strong>
+
+<ul>
+<li>Whirltube will now embed chapter metadata into downloaded video if available.</li>
+<li>Added attractive unicode icon.</li>
+</ul></li>
+<li><strong>1.1.2</strong>
+
+<ul>
+<li>Added option to import browser cookies.</li>
+<li>Replaced Ogg in default audio formats with M4a.</li>
+</ul></li>
+<li><strong>1.1.1</strong>
+
+<ul>
+<li>Fixed inconsistent UI.</li>
+</ul></li>
+<li><strong>1.1.0</strong>
+
+<ul>
+<li>Added support for changing resolution, audio format and subtitle language.</li>
+<li>Added default setting information.</li>
+</ul></li>
+<li><strong>1.0.4</strong>
+
+<ul>
+<li>Fixed bug with wrong equality symbol.</li>
+</ul></li>
+<li><p><strong>1.0.3</strong></p>
+
+<ul>
+<li>Downloading subtitles is now a configurable setting.</li>
+<li>Launching whirltube with a URL will now automatically start yt-dlp with the default download settings.</li>
+</ul></li>
+<li><p><strong>1.0.1</strong></p>
+
+<ul>
+<li>Whirltube will now download any available english subtitles for video.</li>
+</ul></li>
+</ul>
+
+<blockquote>
+  <p>tags:<a href="programs">programs</a></p>
+</blockquote>
+</div><span class="edit_button"><a href="https://mattbee.zone/whirltube.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-NC-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
+</div></div></body></html>

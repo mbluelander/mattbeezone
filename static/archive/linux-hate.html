@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/"><img src="/files/header.png"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
+</span></div><div class="navmenu-item"><span><div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/blog.html">Blog</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/contact">Contact</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/links.html">Links</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/guestbook.html">Guestbook</a>
+</span></div><div class="navmenu-item"><span><a href="https://ko-fi.com/bluelander">Support</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/rss.xml">RSS</a>
+</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1 id="pagetitle">I Hate The Person Linux Turns Me Into</h1>
+
+<blockquote>
+  <p>Saturday April 12th, 2025</p>
+  
+  <p>Tags: <a href="archive">archive</a>, <a href="LinuxSaga">LinuxSaga</a>, <a href="rant">rant</a>, <a href="tech">tech</a></p>
+</blockquote>
+
+<p>I don't have anything planned this weekend outside of the usual chores, so I embarked on the project of setting up linux on my computer. I had made the decision weeks ago, but I wanted to wait until we finished this round of archipelago streams, because I knew it might take days or weeks to get my streaming setup working and stable again. We finished on Thursday, so on Friday I backed up all my essential files, and today I did a clean install. I had stuck with Windows 7 as long as possible, but it's time to finally pull the plug.</p>
+
+<p>Archipelago is the thing that finally convinced me: most of the game integrations don't work with Windows 7, and the April 1 update killed Windows 7 support completely. I could've stuck with the old version--none of the newly supported games are in my wheelhouse--but my options would still be extremely limited. Most supported games that otherwise run fine on 7, like VVVVVV, have randomizers that require windows 10. It doesn't make sense to me, because you can write a program for Windows 7 and it'll still work on Windows 10. There's backwards compatibility. I don't know why people use new APIs just because they exist.</p>
+
+<p>Anyway, the installation went fine, all my hardware seems to be supported (it's a Thinkpad, so no surprises there) but every single facet of using the software has required painstaking research to figure out what I'm supposed to do. The app store on this version of linux (fedora XFCE) is called <strong><em>"dandified yum dragora"</em></strong>, a terrible and meaningless name I'll never remember, so it will always be <em><strong>duke nukem forever</strong></em> to me. Some of the programs I want to use are on there, but a lot of them aren't. I installed VLC to watch videos, and it didn't come with any of the codecs it apparently needs to work. Codecs? I thought the whole point of VLC is that it doesn't require codecs. I was thrilled in 2009 when VLC came along and I no longer had to mess with "k-lite codec pack" and the like.</p>
+
+<p>After googling and finding dozens of forum threads for ways to install the codecs and trying 3 or 4 of them, I finally gave up and took someone's advice to install VLC from "flatpack" instead. Flatpack is like DNF, but different. It doesn't have a UI, so I had to use a command prompt to install it.</p>
+
+<p>The two main uses for a computer are 1. using the web, and 2. watching videos. Linux came with firefox, so #1 was at least taken care of, but I shouldn't have to go into the command prompt to do the very next thing on the list. Off to a bad start!</p>
+
+<p>Once it said it was finished installing, it wasn't installed, so I had to google what to do next. I logged out and back in. It's there now.</p>
+
+<p>Next I had to install Chrome for when my spouse wants to use my computer. This was a piece of cake! I went to the chrome website, I clicked the "get chrome" button, it downloaded a file, I double-clicked it and installed chrome. I hate chrome, but you gotta hand it to them, they make it easy to use their program. If only every program cared about whether people use it.</p>
+
+<p>Next I needed to install bizhawk, for games. It's not on any of the app stores, but it wasn't too hard to set up. I downloaded a .tar.gz file (which is like a zip file but worse) and extracted the contents into a folder. I tried running the executable, but nothing happened. This took some figuring out, but basically the program doesn't run if you click the executable directly, you have to make a desktop shortcut. So I did that, and it launched, but I couldn't play any games. As it turns out, this version doesn't come with any of the firmware you need. Everything, <em>everything</em> on linux requires at least two or three extra steps nobody tells you about.</p>
+
+<p>I googled the bizhawk firmware and downloaded all of them. I got a couple NES and PSX games to work. When I tried to set up the PSX controller, the icons for triangle, square and O don't show up. Just X. So I'll have to trial-and-error to figure out which fields correspond to which buttons. But first I have to figure out why all of the buttons on my controller aren't working. When I first tried to configure it, start and select weren't working. I unplugged it and plugged it back in. Now L and R aren't working. When I use <a href="https://hardwaretester.com/gamepad">hardwaretester.com</a>, all of the buttons are recognized, so I don't know what the problem is. AFAICT, Linux doesn't have a gamepad configuration tool, so I have no way to even troubleshoot it.<sup id="fnref:gamepad"><a href="#fn:gamepad" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+
+<p>Okay, let's forget about programs for a minute and talk about UI: at a glance, modern linux desktops don't look too bad. Some of them even have themes where everything doesn't look completely flat. Nice! Way better than modern Windows.</p>
+
+<p>However, even on themes modeled after Classic Windows, the illusion of user-friendliness shatters as soon as you try to use it. You immediately find yourself confronted with missing UI functionality you weren't even aware you need until it's gone, at which point you realize how indispensable it is.</p>
+
+<p>For example, on my default installation, the color of the active window's title bar was the same as inactive title bars, no matter what theme I used. Not being able to tell which window has focus meant I would start typing a chat message in Discord, and suddenly whatever I had open in Firefox would start responding to a bunch of hotkeys I didn't intend to press. Maddening!</p>
+
+<p>There are about a million different settings menus that sound like they might let you change UI colors, such as "Display", "Appearance", "Color profiles", "Desktop", "Panel", "Panel Profiles", "Window Manager", "Window Manager Tweaks", "XF Dashboard", etc. etc. Can you guess which one of these has the option to change the active window title bar color? If you guessed "none of them", you would be correct. I had to go into the folder for the theme I'm using, <em>create a CSS file</em>, and add a line of CSS I'd have never known about if I didn't happen to find a forum thread where someone asked this question. There isn't even a placeholder file with a bunch of example code I can uncomment, I have to somehow know what the elements are called.</p>
+
+<p>What about the taskbar? Looks normal, but observe: The Firefox taskbar item isn't all the way to the left, even though it was the first program I opened:</p>
+
+<p><img src="https://i.imgur.com/xRGlvc8.png" alt="" title="" /></p>
+
+<p>The web browser has been the main program I use on a computer for at least 20 years. I have 20 years of muscle memory that says the  web browser is always the very first thing on the taskbar. If this is ever <em>not</em> the case, I drag it all the way to the left so it is the first thing. On linux, of course dragging doesn't do anything.</p>
+
+<p>I stumbled on the answer on my own, which is good because I have no idea what these things are called or how to google them. They're not icons; they <em>have</em> icons, but what do you call the thing the icon and text label lives on? The answer is "window buttons", apparently, but I've never consciously thought of them as "buttons" before now. I didn't need a name for them, because they worked the way they're supposed to.</p>
+
+<p>Anyway, you have to go into "Panel Preferences"--"panel" is what the taskbar is called on linux, even though the word "taskbar" isn't trademarked and they could just <em>call it that</em>--and enable the setting for the "sorting order" to "allow drag-and-drop". Why isn't this the default? Why do I have to request special permission?</p>
+
+<p><img src="https://i.imgur.com/zROit5H.png" alt="" title="" /></p>
+
+<p>You are a computer. Let me drag. Let me drop.</p>
+
+<p>Speaking of dragging, here's a UI thing no amount of googling or experimentation is helping with: when you move or resize a window, it has this little tooltip in the middle showing the current position and size of the window. I see how this could be useful in some circumstances, but there's a bug where it doesn't properly erase and redraw the tooltip when you move the window, causing this "snaking" effect I find incredibly annoying. So I'd like to turn this feature off please.</p>
+
+<blockquote>
+  <p><img src="https://i.imgur.com/dKRgWkC.jpeg" alt="" title="" /></p>
+  
+  <p>I had to take a photo of my screen with my phone, because there's no way to make the screenshot key take a screenshot. Pressing it opens the screenshot-taking <em>program</em>, but it won't let you open this program while a window is in motion. Want to take a screenshot while you're moving a window? "Fuck you", that's what linux has to say.</p>
+</blockquote>
+
+<p>I can't find a single piece of documentation or official communication that acknowledges this feature exists. I found one reddit thread with someone asking how to turn it off, and no one had any idea what he was talking about. What are the magic words I need to find a solution? "XFCE window size tooltip" seems like a good bet, but googling that brings up nothing but unrelated problems using the same words. Is it not a tooltip? What is it? I want to throw my computer from the window of a moving train. I want to walk into the sea.</p>
+
+<p>I hate what linux turns me into. I turn into a gibbering problem-solving maniac. I can't cope with everything being broken at once. It's not just adjusting to a new workflow, it's building a new workflow from scratch atom by atom. My brain wants to fix everything at once, and it's so hard to interrupt the doom cycle. My spouse practically had to physically drag me away from the keyboard so I could get to the laundry room before it closes. It's ADHD kryptonite.</p>
+
+<p>It's like being overwhelmed by sidequests in <em>Skyrim</em>, except I get a new sidequest when I open the menu. I get a new sidequest for every page of the inventory, every tab on the skill tree, every item slot I try to equip. I press the "jump" button and I'm given a sidequest to complete before I unlock jumping. No quest targets appear on my compass except the ones to the north. I have to do sidequests to unlock east, west and south.</p>
+
+<p>I would not play this game. I would uninstall it immediately. But this isn't a game. It's the software I need to do literally everything. No one should have to endure this.</p>
+
+<p>Well, I could complain about broken UI literally all day. The whole reason I'm here is because of archipelago, so let's fire up the new version and have a lo--</p>
+
+<pre><code class="python">Fatal Python error: init_fs_encoding: failed to get the 
+Python codec of the filesystem encoding
+Python runtime state: core initialized
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00007f215ebd95c0 (most recent call first):
+  &lt;no Python frame&gt;
+</code></pre>
+
+<p><audio controls src="https://mattbee.zone/hangup.mp3"></audio></p>
+
+<blockquote>
+  <p><em>&#65;&#112;&#114;&#32;&#49;&#51;&#32;&#50;&#48;&#50;&#53;</em> See Kami's response to this post, <a href="https://kami.bearblog.dev/i-hate-the-person-linux-turns-me-into-im-sorry-but-youre-holding-it-wrong/">I'm sorry, but you're holding it wrong</a>, and my response, <a href="/?page=archive/linux-mint">Linux Mint</a>.</p>
+</blockquote>
+
+<p><button onClick=likebutton()  class='sharebutton'>Like &#128077;</button> <input id='sharebutton' type='text' value=' ' id='myInput' style='display:none;'><button onClick='myFunction()' class='sharebutton'>Share &#x1F4E3;</button> <button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button></p>
+
+<div class='replyhidden' id='replyform'><blockquote>If you mentioned this post on your own site and would like to notify me, please enter the URL here:<br>
+<form action='/contact-php/mail.php' method='POST'><input type='text' name='name' id='name' style='width:30em'; required><input type='hidden' name='subject' value='I Hate The Person Linux Turns Me Into'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' style='display:none;'> <input type='submit' value='Send'></form><br>Otherwise, click <a href='https://mattbee.zone/contact?subject=I Hate The Person Linux Turns Me Into'>here</a> to send a message.</blockquote></div>
+
+<div class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+
+<li id="fn:gamepad" role="doc-endnote">
+<p>It doesn't come with one, but I found a program called <a href="https://github.com/sezanzeb/input-remapper">input remapper</a> that allowed me to remap every gamepad button to a key on the keyboard. So it's like JoyToKey except that I have to use it for everything, not just keyboard games. Whatever works, I guess.&#160;<a href="#fnref:gamepad" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+</ol>
+</div>
+</div><span class="edit_button"><a href="https://mattbee.zone/archive/linux-hate.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-NC-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
+</div></div></body></html>
