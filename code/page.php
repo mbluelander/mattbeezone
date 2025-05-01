@@ -37,3 +37,7 @@ $dynamic_content["pat"] = "<span class='emoji' style='background: no-repeat cent
 $dynamic_content["lander"] = "<span class='emoji' style='background: no-repeat center url(/emoji/lander.png); background-position:bottom; background-size: 20px 20px;'> </span>";
 
 $dynamic_content["nb"] = "<span class='emoji' style='background: no-repeat center url(/emoji/nb.png); background-position:bottom; background-size: 20px 20px;'> </span>";
+
+/// blogtop - Creates full block for the top of blog posts, including h1 title with page id element, date, and tags. Variable needs to be after tags function for links to work. ///
+if (!isset($page_datetime)) {$page_datetime = "";} // needed in case no date present in header
+$dynamic_content["blogtop"] = "<h1 id='pagetitle'>" . $dynamic_content["title"] . "</h1><blockquote>" . $page_datetime . "<br><br>Tags:" . $dynamic_content["tags"] . "</blockquote>";
