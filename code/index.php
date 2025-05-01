@@ -49,8 +49,7 @@ if (y == 15) {
 }
 </script>
 <script>
-// When the user clicks on the button, 
-toggle between hiding and showing the dropdown content //
+// When the user clicks on the button, toggle between hiding and showing the dropdown content //
 function showForm() {
 document.getElementById("replyform").classList.toggle("show");
 }
