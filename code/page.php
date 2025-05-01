@@ -24,7 +24,7 @@ $dynamic_content["sharebutton"] .= "<button onClick='myFunction()' class='shareb
 /// replybutton - reveals hidden div with form to submit a pingback url, with link to launch full contact form. Relies on external PHP mailsend function. Passes the title of the current page to the ?subject= query ///
 
 $dynamic_content["replybutton"] = "<button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button><div class='replyhidden' id='replyform'><blockquote>If you mentioned this post on your own site and would like to notify me, please enter the URL here:<br>
-<form action='/contact-php/mail.php' method='POST'><input type='text' name='name' id='name' style='width:30em'; required><input type='hidden' name='subject' value='" . $dynamic_content["title"] . "'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' style='display:none;'> <input type='submit' value='Send'></form><br>Otherwise, click <a href='https://mattbee.zone/contact?subject=" . $dynamic_content["title"] . "'>here</a> to send a message.</blockquote></div>"; 
+<form action='/contact-php/mail.php' method='POST'><input type='url' name='name' id='name' style='width:30em'; required><input type='hidden' name='subject' value='" . $dynamic_content["title"] . "'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' style='display:none;'> <input type='submit' value='Send'></form><br>Otherwise, click <a href='https://mattbee.zone/contact?subject=" . $dynamic_content["title"] . "'>here</a> to send a message.</blockquote></div>"; 
 
 /// pagebuttons - combine three previous buttons into one function ///
 
