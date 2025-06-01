@@ -28,4 +28,4 @@ Jun 11, 2022: [The Last Time I Called Someone "sir"](/archive/last-sir)
 
 May 01, 2022: [Mobile Data Banditry](/archive/mobile-data-banditry)
 
->Tags: $$tags$$
+$$pagebottom$$

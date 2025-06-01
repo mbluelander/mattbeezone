@@ -14,4 +14,4 @@ Made with [Twine](https://twinery.org).
 
 🔹 [Named Color Generator](/randomcolors.html)
 
->Tags: $$tags$$
+$$pagebottom$$

@@ -16,4 +16,4 @@ Mar 03, 2025: [Sunny](/sunny)
 
 Nov 27, 2021: [Laundry Cat](/laundry-cat)
 
->Tags: $$tags$$
+$$pagebottom$$

@@ -2,13 +2,15 @@
 title:Home
 menutitle:home
 tags:main
+date:2025-04-30
 ((content))
 # Home
 
-Welcome to *A Lovely Harmless Monster (Kiki Edition)*. I'm Matt Bee, and this is my hand-crafted web zone. I'm an appalachian typing raccoon. When I'm not working my day job at the spreadsheet garage, I like to play games and craft with words and code. Learn more about me [on the about page](/about).
+Welcome to *A Lovely Harmless Monster (Kiki Edition)*. I'm Matt Bee, and this is my web zone. I'm an appalachian typing raccoon (procyon montani). When I'm not working at the spreadsheet factory, I like to play games, make games, learn, read, and write. Learn more [on the about page](/about).
 
 ## What's New
->Added the [topics](/&tag=topics) category. Check it out if you'd like to read about some topics.
+
+$$recent$$
 
 ## Browse
 
@@ -20,18 +22,12 @@ Welcome to *A Lovely Harmless Monster (Kiki Edition)*. I'm Matt Bee, and this is
 | 🔹 [Misc.](/misc) | 🔹 [Programs](/programs) | 
 | 🔹 [Stories](/stories) | 🔹 [Topics](/&tag=topics) |
 
-## Recent Projects
+## Quote of the Day {#qotd}
 
->🔶 [Blog](/blog)
->
->🔶 [Game Badges](/gamebadges)
->
->🔶 [Whirltube](/whirltube)
+>$$qotd$$
 
+## Picture of the Day
 
+$$potd$$
 
-[Get in touch!](https://mattbee.zone/contact)
-
-[Sandbox](/sandbox)
-
->Tags: $$tags$$
+$$pagebottom$$

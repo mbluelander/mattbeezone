@@ -16,4 +16,4 @@ I've been creating game commentary videos in the form of "Let's Play"s on youtub
 
 See my [playlists](https://www.youtube.com/@dukeofthebump/playlists) for more.
 
->Tags: $$tags$$
+$$pagebottom$$

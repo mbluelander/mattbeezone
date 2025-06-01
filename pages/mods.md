@@ -14,4 +14,4 @@ date:2025-04-26
 | [Henry The Tippler](https://bluelander.itch.io/henry-the-tippler): Chess mod introducing two exciting new pieces to spice up your game, the Tippler and the Jester. The rules came to me in a dream. CW: alcohol | ![](/files/tippler.png)
 | [Fact-Free Ducks](/ff-ducks): I modded a book to make it readable. | ![](/files/ducks.png) |
 
->Tags: $$tags$$
+$$pagebottom$$

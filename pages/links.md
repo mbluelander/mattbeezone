@@ -28,4 +28,4 @@ You can view a feed of blogs I read at my [vore.website](https://vore.website/bl
 
 Proper updated links page forthcoming.
 
->Tags: $$tags$$
+$$pagebottom$$

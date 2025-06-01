@@ -68,4 +68,4 @@ I heard an old man laughing a craven, wheezy chuckle. I wiped my eyes looked up 
 
 I closed my eyes and lowered my face into the grass. I wished I had some cream. Butterbell, the hardy beast no worse for the wear, trotted over to comfort me. I turned to lie on my back. She started nuzzling me and licking my face. I looked up at her, grateful for my trusty drom. She had a strange look in her eye.
 
->Tags:$$tags$$
+$$pagebottom$$

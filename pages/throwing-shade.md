@@ -28,4 +28,4 @@ The school bus rumbled up and lowered itself with a sigh. The twins and the blac
 
 The bus hissed, its stop sign swung back into place, and it continued along its leisurely route. A moment later, the city bus zoomed past in the opposite direction. None of the passengers got off at the now-unoccupied stop. Ray sighed. He closed his eyes and pinched the bridge of his nose. He looked at his watch. He crossed the street, plopped down on the bench, and went back to his book. He folded the cover back to hold it open in his right hand. In his left, he still held the umbrella aloft. His reddening scalp was grateful for the shade.
 
->Tags: $$tags$$
+$$pagebottom$$

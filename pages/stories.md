@@ -8,7 +8,7 @@ date:2025-04-26
 
 | | |
 | - | - |
-| [Tessa Tomble and the Sunken Dowry](/tessa-tomble): Tessa Tomble, sophomore witch and anti-school activist, hatches a scheme. | ![](/files/bridge.jpg) |
+| [Tessa Tomble and the Sunken Dowry](/tessa-tomble): My attempt at tropey genre fiction. Tessa Tomble, sophomore witch and anti-school activist, hatches a scheme. | ![](/files/bridge.jpg) |
 | [The Horse Armor Retraction](/horse-armor): A story about how come everything's so terrible? | ![](/files/horsearmor.jpg) |
 | [The Riff That Conjures Snakes](/riff-snakes): Any sufficiently advanced magic is way cooler than science. | ![](/files/riff.png) |
 | [Always Bet on Dwayne](/always-bet-on-dwayne): Somewhat heartwarming extended shitpost. | ![](/files/roulette.jpg) |
@@ -16,4 +16,4 @@ date:2025-04-26
 | [Throwing Shade](/throwing-shade): Promptfic. "Write a 250 word story in the seasonal genre. It's about a child hater and should include an umbrella. Also use the sentence 'Hello?' Bonus prompt: The story involves a fight." | ![](/files/umbrella.png) |
 | [The Floor is Lava](https://bluelander.itch.io/the-floor-is-lava): PDF rulebook for a "tabletop platformer" game. Get it? | ![](/files/lava.png) |
 
->Tags: $$tags$$
+$$pagebottom$$

@@ -73,4 +73,4 @@ bsr="firefox"	# Browser from which to allow cookies
 * **1.0.1**
   * Whirltube will now download any available english subtitles for video.
 
->tags:$$tags$$
+$$pagebottom$$

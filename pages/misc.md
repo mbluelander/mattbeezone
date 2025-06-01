@@ -14,4 +14,8 @@ Stuff that doesn't fit anywhere else.
 
 📚️ [Everything](/everything): Alphabetical-ish index of every page on the site, with folders.
 
->Tags: $$tags$$
+📦️ [Backup](https://github.com/mbluelander/mattbeezone): Monthly static archive of mattbee.zone. Generated HTML pages, markdown files and custom code. Backed up on the last day of each month.
+
+$$lander$$ [Emojidex](/emojidex): Index of emoji.
+
+$$pagebottom$$

@@ -14,17 +14,35 @@ date:2050-01-01
 <input type="text" name="email" id="email"><br><br>
 <input type="hidden" name="subject" id="subject" value="Guestbook">
 
-<label for="captcha"></label>
-<input type="text" name="captcha" id="captcha" style="display:none;">
+<label for="captcha">Which word sounds like the last word of the title of this website: advocate, benefactor, patron, sponsor, supporter<span style="color:red;">*</span></label><br>
+<input type="text" name="captcha" id="captcha" required><br><br>
 <label for="message">Message<span style="color:red;">*</span></label><br>
 <textarea class="cform" name="message" cols="30" rows="5" minlength=10 required></textarea><br><br>
 <input type="submit" value="Write">
 </form>
 
 ---
+>[Maverynthia](https://maverynthia.com/)
+>
+>May 31, 2025
+
+I got sent here from [voidfox.com](https://voidfox.com) for the gamebadges. Really neat :3
+
+*Thanks! $$pat$$ Your site is neat too, gonna read some reviews.*
+
+---
+>anon
+>
+>May 07, 2025
+
+loving reading your posts abt linux. if you have issues with your setup again, i recommedn trying kde. modern features and actually about the same performance as xfce these days
+
+*Thanks! My setup has been working surprisingly smoothly, I'll write up a post about how it's going soon. -Matt*
+
+---
 >s
 >
->April 14th, 2025
+>April 14, 2025
 
 sorry, hadn't read your newest post. my post below was a reaction to the one before it. Maybe LXDE or LXQT would work better as minimalist DEs. Also, you can have multiple DEs installed at the same time to try out. Most display managers (they should be called login managers tbh) like gdm and lightdm, let you switch between DE before logging in. You couod throw in some Tiling Window managers like i3 or Sway (depending on if you wanna switch from X11 to Wayland) Sorry if this is all a hassle. Just think you'd have a better time with literally anything but XF Feces. |
 
@@ -56,7 +74,7 @@ I love that despite it all, and despite being a little mad at it, you are sticki
 
 >j3s
 >
->April 11th, 2025
+>April 11, 2025
 
 cute site!! :3
 
@@ -72,7 +90,7 @@ I hope they get you a new work computer. 7th gen is waaay too old for them to ex
 
 >Hunter Jones
 >
->March 25th, 2025
+>March 25, 2025
 
 Cool site
 
@@ -80,7 +98,7 @@ Cool site
 
 >James P.
 >
->February 27th, 2025
+>February 27, 2025
 
 Love the blog! Keep it up :o)
 
@@ -88,7 +106,7 @@ Love the blog! Keep it up :o)
 
 >Karl Pankraz
 >
->January 07th, 2025
+>January 07, 2025
 
 Grüße aus Berlin! I really like this kind of websites found on neocities. Very cool design! Would love to make my own site! I hope you have a very productive year. -Karl
 
@@ -96,7 +114,7 @@ Grüße aus Berlin! I really like this kind of websites found on neocities. Very
 
 >[scivolema](https://scivolema.neocities.org/)
 >
->November 13th, 2024
+>November 13, 2024
 
 Hello Bluelander! Greetings from Internet. Thanks to share the links of sadgrl and Zonelets, are very good tools. Regards. Scivolema.
 
@@ -104,7 +122,7 @@ Hello Bluelander! Greetings from Internet. Thanks to share the links of sadgrl a
 
 >[outofatuan](https://outofatuan.neocities.org/)
 >
->November 04th, 2024
+>November 04, 2024
 
 hi! i like your site and the way you write :) i'll be poking around and trying some of your games!
 

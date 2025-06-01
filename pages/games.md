@@ -20,4 +20,4 @@ date:2025-04-24
 | [Conclusive Chess](https://bluelander.itch.io/conclusive-chess): The ultimate chess AI. Unbeatable. 🧭📱 | ![](/files/chess.png) |
 | [Toll-Free Detective](/tfd): A game you can play with a telephone from 1953. ☎️ | ![](/files/dial.png) |
 
->Tags: $$tags$$
+$$pagebottom$$

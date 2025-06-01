@@ -1,11 +1,11 @@
 ((header))
 title:Everything
 author:matt
-tags:misc
+tags:misc, meta
 date:2025-04-28
 ((content))
 <h1 id="pagetitle">$$title$$</h1>
 
-!{show page links}
+!{show page links with tag="blog"}
 
->Tags: $$tags$$
+$$pagebottom$$

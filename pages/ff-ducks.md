@@ -16,4 +16,4 @@ I wondered what the book would be like if it were readable, so I used a computer
 
 Download it here: [factfreeducks.mobi (1.49 MB)](https://drive.google.com/uc?export=download&id=1YOqAPhQRmAny1gId7xKDn1jh8AWFDlLU)
 
->$$tags$$
+$$pagebottom$$
