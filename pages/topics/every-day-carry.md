@@ -1,12 +1,14 @@
 ((header))
 title:Every Day Carry
 author:matt
-tags:topics
+tags:topics, stuff
 date:2025-04-28
 ((content))
 <h1 id="pagetitle">$$title$$</h1>
 
-> For the original post which includes photos and descriptions, see the archived post [Every Day Carry](/archive/edc)
+>💡 Note
+>
+>For the original post which includes photos and descriptions, see the archived post [Every Day Carry](/archive/edc)
 
 ## Backpack
 

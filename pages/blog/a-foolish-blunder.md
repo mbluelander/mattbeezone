@@ -5,11 +5,7 @@ author:matt
 tags:blog, food, outside, personal
 date:2025-04-25
 ((content))
-<h1 id="pagetitle">$$title$$</h1>
-
->$$date$$
->
->Tags: $$tags$$
+$$blogtop$$
 
 Today on my lunch break 5K,[^5k] I decided to stop at a gas station, one of a small handful of stores within a 30-minute radius of work, to get something different for lunch. It's not a good gas station, like a 7-Eleven or Sheetz, it's a second-tier regional chain inexplicably named "Par Mar".[^hms] But they at least have some refrigerator sandwiches.
 

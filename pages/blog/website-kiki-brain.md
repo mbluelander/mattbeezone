@@ -1,14 +1,11 @@
 ((header))
 title:Website, Kiki, Brain
 author:matt
-tags:blog, kiki, mental health, meta, programming
+tags:blog, crafting, kiki, mental health, meta, programming
 date:2025-04-29
 ((content))
-<h1 id="pagetitle">$$title$$</h1>
 
->$$date$$
->
->Tags: $$tags$$
+$$blogtop$$
 
 Most of my creative energy for the past few days has gone into  [my website](https://mattbee.zone). I'm really happy with how it's coming along. My goal was a design that combined the simplicity of my bearblog with the colorful personalization of my old neocities site, and I think I nailed it. I solved the navigation problem by putting all the major site categories in a well-designed and accessible drop-down menu in the navigation bar. I've always wanted a site with a drop-down menu, but always balked because doing it with pure CSS or a details/summary hack never looked or behaved quite the way I wanted. Like I'm sure it's possible if I beat my head against it long enough, but instead, I just used javascript. Every big website is three javascript frameworks in a trenchcoat, so I can have a little script or two. It looks great.
 

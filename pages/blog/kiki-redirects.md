@@ -4,11 +4,7 @@ author:matt
 tags:blog, kiki, meta, tech
 date:2025-04-26
 ((content))
-# $$title$$ {#pagetitle}
-
->$$date$$
->
->Tags: $$tags$$
+$$blogtop$$
 
 Just a quick note about URL redirects with kiki: the [user guide](https://tomodashi.com/kikidemo/help/user_guide) gives some steps for enabling URL rewriting (under the heading "SEO-Friendly Permalinks") for use with the "easy" style of permalinks. For example, instead of ``example.com/index.php?page=blog``, it's much cleaner to simply have ``example.com/blog``.) I figure most people using kiki would prefer this setup, if possible.
 

@@ -1,7 +1,7 @@
 ((header))
 title:Edit
 author:matt
-tags:topics
+tags:topics, meta
 date:2025-02-28
 ((content))
 <h1 id="pagetitle">$$title$$</h1>

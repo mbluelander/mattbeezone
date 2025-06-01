@@ -1,14 +1,10 @@
 ((header))
 title:Coding as a Craft
 author:matt
-tags:blog, creativity, kiki, mental health, meta, programming
+tags:blog, crafting, kiki, mental health, meta, programming
 date:2025-04-26
 ((content))
-<h1 id="pagetitle">$$title$$</h1>
-
->$$date$$
->
->Tags: $$tags$$
+$$blogtop$$
 
 Learning about bash and working on [whirltube](/?page=whirltube) has got me feeling the programming itch again, and I'm not sure what to do with it. Part of me wants to keep adding stuff to whirltube even though I don't need to, but that way lies madness. I need to find a new project (or go back to an existing one.)
 
