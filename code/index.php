@@ -1,8 +1,5 @@
-<?
-// scripts for all js functions. To be placed at the bottom of index.php ///
-
 <script>
-// builds text to be shared by sharebutton. If an element on the page has the "pagetitle" attribute, it uses that text + the URL, otherwise it just uses the URL. //
+/* builds text to be shared by sharebutton. If an element on the page has the "pagetitle" attribute, it uses that text + the URL, otherwise it just uses the URL. */
 var url = window.location.href;
 
 if (document.getElementById("pagetitle"))  {
@@ -12,7 +9,7 @@ var title = "";}
 
 title += url ;
 
-// Puts the text to share in a hidden text field //
+/* Puts the text to share in a hidden text field */
 
 document.getElementById("sharebutton").value = title;
 function myFunction() {
@@ -30,7 +27,7 @@ function myFunction() {
   alert("Copied: " + copyText.value);
 }
 
-// "Like button" - displays a message, with different messages if clicked multiple times //
+/* "Like button" - displays a message, with different messages if clicked multiple times */
 let x = 1
 function likebutton() {
 const y = x++
@@ -49,17 +46,25 @@ if (y == 15) {
 }
 </script>
 <script>
-// When the user clicks on the button, toggle between hiding and showing the dropdown content //
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
 function showForm() {
 document.getElementById("replyform").classList.toggle("show");
+window.scrollBy(0, 200);
+}
+
+function showIA() {
+var url = window.location.href;
+window.location.href = "https://web.archive.org/save/" + url;
+alert("Saving page to Wayback Machine, this may take a moment...");
 }
 
 function dropFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Remove focus from dropdown button if the user clicks it again //
-// Close the dropdown if the user clicks outside of it //
+/* Remove focus from dropdown button if the user clicks it again */
+/* Close the dropdown if the user clicks outside of it */
 
 window.onclick = function(event) {
   if (event.target.matches('.dropbtn') && !document.getElementById("myDropdown").classList.contains('show')) {
@@ -79,4 +84,3 @@ window.onclick = function(event) {
   }
 }
 </script>
-?>
