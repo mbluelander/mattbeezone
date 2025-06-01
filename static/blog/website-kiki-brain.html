@@ -1,18 +1,15 @@
-﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/"><img src="/files/header.png"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
+﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/" title="Click to return home"><img src="/files/header.png" alt="A Lovely Harmless Monster"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
 </span></div><div class="navmenu-item"><span><div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
 </span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/blog.html">Blog</a>
 </span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/contact">Contact</a>
 </span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/links.html">Links</a>
 </span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/guestbook.html">Guestbook</a>
 </span></div><div class="navmenu-item"><span><a href="https://ko-fi.com/bluelander">Support</a>
+</span></div><div class="navmenu-item"><span><a href="https://www.redbubble.com/people/mattbeezone/shop?asc=u">Merch</a>
 </span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/rss.xml">RSS</a>
-</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1 id="pagetitle">Website, Kiki, Brain</h1>
+</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1 id='pagetitle'>Website, Kiki, Brain</h1>
 
-<blockquote>
-  <p>Tuesday April 29th, 2025</p>
-  
-  <p>Tags: <a href="blog">blog</a>, <a href="kiki">kiki</a>, <a href="mental health">mental health</a>, <a href="meta">meta</a>, <a href="programming">programming</a></p>
-</blockquote>
+<blockquote>Tuesday April 29th, 2025<br><br>Tags: <a href="blog">blog</a>, <a href="crafting">crafting</a>, <a href="kiki">kiki</a>, <a href="mental health">mental health</a>, <a href="meta">meta</a>, <a href="programming">programming</a></blockquote>
 
 <p>Most of my creative energy for the past few days has gone into  <a href="https://mattbee.zone">my website</a>. I'm really happy with how it's coming along. My goal was a design that combined the simplicity of my bearblog with the colorful personalization of my old neocities site, and I think I nailed it. I solved the navigation problem by putting all the major site categories in a well-designed and accessible drop-down menu in the navigation bar. I've always wanted a site with a drop-down menu, but always balked because doing it with pure CSS or a details/summary hack never looked or behaved quite the way I wanted. Like I'm sure it's possible if I beat my head against it long enough, but instead, I just used javascript. Every big website is three javascript frameworks in a trenchcoat, so I can have a little script or two. It looks great.</p>
 
@@ -65,10 +62,10 @@ if (isset($_GET["subject"]))
 
 <p>See, this is what my brain does. I shouldn't be doing any of this. Remember what I said the other day about debugging PHP on your phone? And how you should not? I can't take my own advice. I said I needed to take a break from programming and slow down and then I did this in the same afternoon. My brain makes me do things I shouldn't. I wish it didn't have a mind of its own <span class='emoji' style='background: no-repeat center url(/emoji/headpat.png); background-position:bottom; background-size: 20px 20px;'> </span></p>
 
-<p><button onClick=likebutton()  class='sharebutton'>Like &#128077;</button> <input id='sharebutton' type='text' value=' ' id='myInput' style='display:none;'><button onClick='myFunction()' class='sharebutton'>Share &#x1F4E3;</button> <button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button></p>
+<p><button onClick=likebutton()  class='sharebutton'>Like &#128077;</button> <input id='sharebutton' type='text' value=' ' id='myInput' style='display:none;'><button onClick='myFunction()' class='sharebutton'>Share &#x1F4E3;</button> <button onClick='showIA()' class='sharebutton'>Save 🏛️</button> <button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button></p>
 
 <div class='replyhidden' id='replyform'><blockquote>If you mentioned this post on your own site and would like to notify me, please enter the URL here:<br>
-<form action='/contact-php/mail.php' method='POST'><input type='text' name='name' id='name' style='width:30em'; required><input type='hidden' name='subject' value='Website, Kiki, Brain'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' style='display:none;'> <input type='submit' value='Send'></form><br>Otherwise, click <a href='https://mattbee.zone/contact?subject=Website, Kiki, Brain'>here</a> to send a message.</blockquote></div>
+<form action='/contact-php/mail.php' method='POST'><input type='url' name='name' id='name' style='max-width:80%;' size=50 required><input type='hidden' name='subject' value='Website, Kiki, Brain'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' value='sponsor' style='display:none;'> <input type='submit' value='Ping me!'></form><br><br>If you have an account on the <a href='https://fediverse.party/'>fediverse</a>, you can reply to the post in the <a href='https://gamemaking.social/@minterpunct/tagged/alhm'>Mastodon feed</a>.<br><br>Otherwise, <a href='https://mattbee.zone/contact?subject=Website, Kiki, Brain'>click here</a> to send a message.</blockquote></div>
 
 <div class="footnotes" role="doc-endnotes">
 <hr />
@@ -84,5 +81,5 @@ if (isset($_GET["subject"]))
 
 </ol>
 </div>
-</div><span class="edit_button"><a href="https://mattbee.zone/blog/website-kiki-brain.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-NC-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
+</div><span class="edit_button"><a href="https://mattbee.zone/blog/website-kiki-brain.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
 </div></div></body></html>

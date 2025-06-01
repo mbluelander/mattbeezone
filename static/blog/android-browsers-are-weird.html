@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/" title="Click to return home"><img src="/files/header.png" alt="A Lovely Harmless Monster"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
+</span></div><div class="navmenu-item"><span><div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/blog.html">Blog</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/contact">Contact</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/links.html">Links</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/guestbook.html">Guestbook</a>
+</span></div><div class="navmenu-item"><span><a href="https://ko-fi.com/bluelander">Support</a>
+</span></div><div class="navmenu-item"><span><a href="https://www.redbubble.com/people/mattbeezone/shop?asc=u">Merch</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/rss.xml">RSS</a>
+</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1 id='pagetitle'>Android Browsers are Weird</h1>
+
+<blockquote>Tuesday May 06th, 2025<br><br>Tags: <a href="blog">blog</a>, <a href="crafting">crafting</a>, <a href="phones">phones</a>, <a href="tech">tech</a></blockquote>
+
+<p>In the old days, Android phones all came with an app installed that was just called <em>Browser</em>. This was usually an official Google app, and it was just a wrapper around android's <a href="https://en.m.wikipedia.org/wiki/WebView">WebView.</a> This is a system component that's always been part of Android, and it's a web renderer that <em>any</em> app can use. If you use an app like Instagram or Facebook and click a link, it often uses WebView to render it, rather than opening a dedicated browser. This is because Facebook wants to keep you using Facebook, and if it opens a full browser, you can type in a URL or open a new tab to go somewhere else. Facebook wants you to just tap the "back" button and go back to Facebook, so unless you start clicking links, that's the only option you get.</p>
+
+<p>The popular third-party browsers on early Android, like <em>Kiwi</em> and <em>Dolphin</em>, were simply wrappers around the WebView API that offered additional features or a better UI than the default Android browser. Some mobile browsers, like <em>Brave</em> and <em>Opera</em>,<sup id="fnref:opera"><a href="#fn:opera" class="footnote-ref" role="doc-noteref">1</a></sup> market themselves heavily and include malware or deceptive services to profit off the users in some way; but fundamentally they're just the same WebView implementation under the hood.<sup id="fnref:brave"><a href="#fn:brave" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+
+<p>There are exceptions; the android version of Firefox still uses a version of their Gecko engine, but as a result it's slower and clunkier than the ones that use WebView.</p>
+
+<p>I use <a href="https://play.google.com/store/apps/details?id=mark.via.gp">Via</a>. It's also just a wrapper around WebView like <em>Kiwi</em> and <em>Dolphin</em> were, but unlike those browsers, it hasn't yet capitalized on its popularity by adding ads or other malware. It's fast, it stays out of the way, and it even has some basic ad-blocking functionality. It's not as comprehensive as <a href="https://en.wikipedia.org/wiki/UBlock_Origin">uBlock Origin</a>, but it makes the corporate web somewhat usable on a mobile device.</p>
+
+<p>Now, I haven't mentioned the elephant in the room, which is Chrome: at some point, Android stopped coming with an app called "Browser"<sup id="fnref:browser"><a href="#fn:browser" class="footnote-ref" role="doc-noteref">3</a></sup> and started including Chrome, which makes sense: they want to unify all their OS stuff under the Chrome umbrella, because in many ways, everything is becoming a web app. ChromeOS can run Android apps, and many modern Android apps are made with the same javascript frameworks that websites are made with. The distinction is becoming less meaningful.</p>
+
+<p>Here's what I don't understand: <em>surely</em> the android version of Chrome is also a wrapper around WebView, right? So why do sites look different on Chrome than they do in Via? I've been mildly obsessed with this question, because I opened my site in Chrome and noticed a lot of text is the wrong size. Other than <code>&lt;h1&gt; &lt;h2&gt;</code> etc, and the navigation bar and footer, all the text on this site should be exactly the same size. I carefully crafted page elements so that, for example, the Browse section of <a href="/">the front page</a> is two neat columns in harmony with the rest of the text. But on Chrome, the text in those columns is smaller. The "browse" item in the navbar is too small, the navbar items don't line up nicely in three rows, and the overall text size is much larger than it should be.</p>
+
+<p>I've pored over the CSS. I can't figure out where the discrepancy is coming from. I can't figure out why it doesn't look exactly the same as it does in Via. It <em>should</em>. Chrome must use WebView under the hood, right? Or maybe now it's more accurate to say WebView is using Chrome. Either way, it <em>should</em> all be the same. The Chrome app is 30MB, which is bigger than <em>Via</em>'s 12 MB, but that's probably accounting for Chrome's google profile integration and other data-mining malware. There's no way it contains an entirely separate rendering engine; the desktop version is around 200MB. Idkwtf.</p>
+
+<p>In <a href="/archive/mobile-data-banditry">Mobile Data Banditry</a>, I used my browser's development tools<sup id="fnref:chromium"><a href="#fn:chromium" class="footnote-ref" role="doc-noteref">4</a></sup> to modify my mobile carrier's web site to insert an <code>&lt;iframe&gt;</code> and see if it would allow me to bypass their data restrictions.<sup id="fnref:mdb"><a href="#fn:mdb" class="footnote-ref" role="doc-noteref">5</a></sup> I complained about the user experience on a phone:</p>
+
+<p><img src="https://i.imgur.com/eERManS.jpg" alt="" /></p>
+
+<p>But it was at least possible in 2022. Now it doesn't seem to be. There may be some browser that offers this functionality, but crucially, I can't use the developer tools on mobile Chrome to see what CSS it's applying and why. Mobile Chrome doesn't even seem to have a <em>view source</em> function. It's 100% for consumption.</p>
+
+<p>I have a tendency to fixate on small details---you wouldn't believe how long it took me to make sure the little arrow on the "Browse" drop-down changes back and forth correctly---but here, I'm going to have to tap out. I don't have a comb fine-toothed enough to figure out how to make the CSS look normal in Chrome, nor do I have the spoons to care. My official recommendation is not to use Chrome; if you do, zooming out to 90% makes it look closer to how I intend. Beyond that, I can't help you 🦝</p>
+
+<p><button onClick=likebutton()  class='sharebutton'>Like &#128077;</button> <input id='sharebutton' type='text' value=' ' id='myInput' style='display:none;'><button onClick='myFunction()' class='sharebutton'>Share &#x1F4E3;</button> <button onClick='showIA()' class='sharebutton'>Save 🏛️</button> <button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button></p>
+
+<div class='replyhidden' id='replyform'><blockquote>If you mentioned this post on your own site and would like to notify me, please enter the URL here:<br>
+<form action='/contact-php/mail.php' method='POST'><input type='url' name='name' id='name' style='max-width:80%;' size=50 required><input type='hidden' name='subject' value='Android Browsers are Weird'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' value='sponsor' style='display:none;'> <input type='submit' value='Ping me!'></form><br><br>If you have an account on the <a href='https://fediverse.party/'>fediverse</a>, you can reply to the post in the <a href='https://gamemaking.social/@minterpunct/tagged/alhm'>Mastodon feed</a>.<br><br>Otherwise, <a href='https://mattbee.zone/contact?subject=Android Browsers are Weird'>click here</a> to send a message.</blockquote></div>
+
+<div class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+
+<li id="fn:opera" role="doc-endnote">
+<p>Opera used to be great; it was my go-to browser for most of the 2000s, back when there was an actual browser ecosystem. It was bought by a vulture capital cabal in 2016 and has since used its name recognition to facilitate <a href="/topics/scam">scams</a>.&#160;<a href="#fnref:opera" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:brave" role="doc-endnote">
+<p>Reader Goofpunk believes Brave and Opera are in fact using Chromium components rather than WebView; I haven't installed either browser (for obvious reasons) but if true, this makes the whole ecosystem that much more confusing to me: Why would they choose to use Chromx instead of WebView? What's the difference, but more importantly, why <em>is</em> there a difference??&#160;<a href="#fnref:brave" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:browser" role="doc-endnote">
+<p>Your phone may still come with an app called <em>Browser</em>, but it's probably from your phone manufacturer or carrier, not Google. Samsung phones in particular like to change your default browser back to Samsung's Browser every time your device has an update: it's a wrapper around WebView with some added malware.&#160;<a href="#fnref:browser" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:chromium" role="doc-endnote">
+<p>In that entry, I incorrectly stated that Android browsers are based on Chromium; my understanding now is that "Chromium" is just the name used by the open-source components of Chrome. If you want to get technical, the engine used by all of these browsers is called Blink. Hopefully you can understand my confusion. What is the exact relationship between WebView, Blink and mobile Chrome? <span class='emoji' style='width:59px !important; height:20px; background: no-repeat center url(/emoji/mystery.png); background-position:bottom; background-size: 59px 20px; filter:invert(1);'> </span>&#160;<a href="#fnref:chromium" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+<li id="fn:mdb" role="doc-endnote">
+<p>It didn't, but I still think it was a clever idea.&#160;<a href="#fnref:mdb" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+</ol>
+</div>
+</div><span class="edit_button"><a href="https://mattbee.zone/blog/android-browsers-are-weird.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
+</div></div></body></html>

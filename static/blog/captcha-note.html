@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" /><html><head><link rel="stylesheet" type="text/css" href="https://mattbee.zone/themes/onecolumn/style.css"><title>A Lovely Harmless Monster</title></head><body><div id="container">	<div class="title" id="top"><a href="/" title="Click to return home"><img src="/files/header.png" alt="A Lovely Harmless Monster"></a></div><div id="navmenu"><div class="navmenu-item"><span><a href="https://mattbee.zone/about.html">About</a>
+</span></div><div class="navmenu-item"><span><div class="dropdown"> <button onclick="dropFunction()" class="dropbtn">Browse</button>  <div id="myDropdown" class="dropdown-content">   <a href="/archive">Archive</a>  <a href="/av">Audiovisual</a>   <a href="/cats">Cats</a> <a href="/collections">Collections</a> <a href="/games">Games</a> <a href="/mods">Mods</a> <a href="/misc">Misc</a> <a href="/programs">Programs</a> <a href="/stories">Stories</a> <a href="/&tag=topics">Topics</a></div></div>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/blog.html">Blog</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/contact">Contact</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/links.html">Links</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/guestbook.html">Guestbook</a>
+</span></div><div class="navmenu-item"><span><a href="https://ko-fi.com/bluelander">Support</a>
+</span></div><div class="navmenu-item"><span><a href="https://www.redbubble.com/people/mattbeezone/shop?asc=u">Merch</a>
+</span></div><div class="navmenu-item"><span><a href="https://mattbee.zone/rss.xml">RSS</a>
+</span></div></div>    <div id="page_menu">    </div>    <div id="content"><div class="page_content"><h1 id='pagetitle'>Quick Note on Captchas</h1>
+
+<blockquote>Wednesday May 07th, 2025<br><br>Tags: <a href="blog">blog</a>, <a href="meta">meta</a></blockquote>
+
+<p>Well, the "negative captcha" I talked about a few days ago didn't do shit. The oldest reference to the idea I can find is from 2007, so I should've guessed that trick would no longer work. I've been getting a ton of spam in the <a href="/guestbook">guestbook</a> for websites about finding pre-owned cars in Ukraine. Even if I <em>were</em> a Ukrainian car-driver, I'd probably have more pressing issues at the moment.</p>
+
+<p>So there's a captcha again, and this time it should be something that's trivial for humans to answer but hopefully subjective enough to trip up a bot-and also not based on image recognition, because that can cause accessibility issues, and doing an audio captcha is a pain.</p>
+
+<p>I expect that these bots are doing some sort of LLM query now, which seems nuts-if my tiny nothing of a website with no external links is a target, the bots must be spamming at a massive scale, and doing an LLM query for thousands or millions of websites must be super expensive; I hardly see how spamming my little website with rounding-error traffic can possibly be worth it. But spambots were able to figure out what color the sky is, and tell me, so there must be <em>some</em> amount of language processing going on.</p>
+
+<p>I feel like identifying that a word "sounds like" another word is something even LLMs would struggle with,<sup id="fnref:LLM"><a href="#fn:LLM" class="footnote-ref" role="doc-noteref">1</a></sup> so hopefully this cuts the spam without being too much of a burden. I mean, I guess I could ask "how many Rs are in the word strawberry" and it'd be effective forever, but that might trip some people up, too.</p>
+
+<p>Also, when I was setting this up, I realized that the form for mention URLs when you press the "reply" button was configured incorrectly, so if you sent any of those, I haven't been receiving them. It should be working now, so feel free to resubmit if you like and sorry about the error. There's no captcha on that form at the moment, but I might add one if it becomes a problem too.</p>
+
+<p>Finally, to the reader who sent a reply to <a href="/blog/neurodivergence">Neurodivergence</a> around when I was messing with the captcha stuff, your message came through and I'll reply when I get a chance. Sorry for all the weirdness.</p>
+
+<p><button onClick=likebutton()  class='sharebutton'>Like &#128077;</button> <input id='sharebutton' type='text' value=' ' id='myInput' style='display:none;'><button onClick='myFunction()' class='sharebutton'>Share &#x1F4E3;</button> <button onClick='showIA()' class='sharebutton'>Save 🏛️</button> <button onClick='showForm()' class='sharebutton'>Reply &#x1f48c;</button></p>
+
+<div class='replyhidden' id='replyform'><blockquote>If you mentioned this post on your own site and would like to notify me, please enter the URL here:<br>
+<form action='/contact-php/mail.php' method='POST'><input type='url' name='name' id='name' style='max-width:80%;' size=50 required><input type='hidden' name='subject' value='Quick Note on Captchas'> <input type='hidden' name='email'><input type='hidden' name='message' value='Mention'><input type='text' name='captcha' value='sponsor' style='display:none;'> <input type='submit' value='Ping me!'></form><br><br>If you have an account on the <a href='https://fediverse.party/'>fediverse</a>, you can reply to the post in the <a href='https://gamemaking.social/@minterpunct/tagged/alhm'>Mastodon feed</a>.<br><br>Otherwise, <a href='https://mattbee.zone/contact?subject=Quick Note on Captchas'>click here</a> to send a message.</blockquote></div>
+
+<div class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+
+<li id="fn:LLM" role="doc-endnote">
+<p>When I got home from work, I asked one of the leading chatbots to answer and sure enough it flubbed it in spectacular fashion. It clearly didn't understand the question and the rationale for its wrong answer made no sense even in a vacuum.&#160;<a href="#fnref:LLM" class="footnote-backref" role="doc-backlink">&#8617;&#xFE0E;</a></p>
+</li>
+
+</ol>
+</div>
+</div><span class="edit_button"><a href="https://mattbee.zone/blog/captcha-note.html&command=edit"> </a></span><div class="footer"><p><a href="#top" style="float:left; text-decoration:none;font-size:200%;">⬆️</a> CC-BY-SA 2025 mattbee.zone. <a href="/license">Some Rights Reserved</a> | <a href="/privacy">Privacy</a> | Made with <a href="https://tomodashi.com/kiki">kiki</a>
+</div></div></body></html>
